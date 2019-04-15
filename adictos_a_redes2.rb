@@ -11,6 +11,7 @@ def scan_addicts2(array)
     end
   end
   results
+end
 "\n"
 
   print scan_addicts2([120, 50, 600, 30, 90, 10, 200])

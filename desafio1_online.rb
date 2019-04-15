@@ -15,7 +15,3 @@ puts "\n"
 e = a.count {|x| x < 5}
 print e
 puts "\n"
-
-
-
-

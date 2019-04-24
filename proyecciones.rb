@@ -1,28 +1,29 @@
 data = open('ventas_base.db').read.chomp.split(',')
 
 def proyeccion_venta1 (data)
-   suma=0
+   suma=[]
      
     for i in 0..5
-        suma +=data[i].to_i
+        suma.push data[i].to_i
     end
-    return suma * 1.1
-end
+    resultado = suma.sum * 1.1    
 
-puts proyeccion_venta1(data)
+end
 
 def proyeccion_venta2 (data)
-    suma=0
-    
+suma= []
+
     for i in 6..11
-        suma +=data[i].to_i
+        suma.push data[i].to_i
     end
-    return suma * 1.2
+    resultado1 = suma.sum * 1.2     
+  
 end
-    
 
-File.write('resultados.data', data.join("\n"))
+resultado = []
 
+resultado.push proyeccion_venta1(data).round(1)
+resultado.push proyeccion_venta2(data).round(2)
 
-puts proyeccion_venta2(data)
+File.write('resultados.data', resultado.join("\n"))
 
